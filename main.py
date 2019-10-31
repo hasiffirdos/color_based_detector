@@ -1,7 +1,9 @@
 
-from scripts.flavour_classifier import get_flavour
-from scripts.color_classifier import get_color
 import os
+
+from scripts.color_classifier import get_color
+from scripts.flavour_classifier import get_flavour
+
 
 def run():
     while(True):
@@ -37,8 +39,10 @@ def run_for_all():
     print("true_count",true_count)
 
 
-print(get_color("im/yellowcap-027.jpeg"))
-run()
+if __name__ == '__main__':
+    opt = input('press \n1- for bottle_Cap color\n2- for snacks flavour\nYou choose for:')
 
-
-
+    if opt == '1':
+        print(get_color("im/yellowcap-027.jpeg"))
+    else:
+        run()
